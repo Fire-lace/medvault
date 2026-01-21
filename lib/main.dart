@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medvault/screens/auth/auth_screen.dart';
-import 'package:medvault/screens/home_screen.dart';
+import 'package:medvault/screens/home_shell.dart';
 import 'package:medvault/services/auth_service.dart';
 import 'package:medvault/services/auth_state.dart';
 import 'package:provider/provider.dart';
@@ -36,7 +36,7 @@ class AuthGate extends StatelessWidget {
     return Consumer<AuthState>(
       builder: (context, authState, _) {
         if (authState.isAuthenticated) {
-          return const HomeScreen();
+          return const HomeShell();
         } else {
           return const AuthScreen();
         }
